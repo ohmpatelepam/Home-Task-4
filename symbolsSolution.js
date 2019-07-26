@@ -10,27 +10,30 @@ class Car {
 
 // implement the functionality to set and get values to car color - Black, car model - Land Rover and car maker - Jaguar
 // you should assign values to those private variables inside class - use setter and getter methods
-        this.getColor = () => {
+    }
+        get color(){
             return this[CARCOLOR];
         }
-        this.setColor = () =>{
+        set color(){
             this[CARCOLOR] = "Black";
         }
-        this.getModel = () => {
+        get model(){
             return this[CARMODEL];
         }
-        this.setModel = () =>{
+        set model(){
             this[CARMODEL] = "Land Rover";
         }
-        this.getMaker = () => {
+        get maker(){
             return this[CARMAKE];
         }
-        this.setMaker = () =>{
+        set maker(){
             this[CARMAKE] = "Jaguar";
         }
-    }
+    
 }
 let myCar = new Car('Red', 'Porsche', 'Cayanne');
-myCar.color = `blue`;
+myCar.color = `blue`; // defined by ceator of challenge
+
 console.log(myCar.color);
-console.log(myCar);
+console.log(myCar.model);
+console.log(myCar.maker);

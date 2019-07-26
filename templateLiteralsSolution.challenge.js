@@ -17,12 +17,12 @@ let users = [
 
 ]
 
-const checkDiscountMultiplier = (user) => {
+const checkDiscount = (user) => {
     if(user.newuser){
-        return 0.04;
+        return 4;
     }else{
-        return 0.05;
+        return 5;
     }
 }
 
-console.log(checkDiscountMultiplier(users[0]));
+console.log(`The discount for ${users[0].name} is ${checkDiscount(users[0])} %`);
