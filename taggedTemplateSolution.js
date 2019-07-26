@@ -12,6 +12,7 @@ let whereClauses = [
     `uid = ${2+1}`,
     `OR city = ${city}`
 ]
+let order = true;
 
 // Your code to call the tag and log the return value here...
 // your output should be - SELECT * FROM USERS WHERE uid = 3 OR city = chicago ORDER BY city
@@ -27,12 +28,14 @@ function checkQuery(identifiers,...variables) {
       return finalQuery;
     }
     if(queryType == 'UPDATE' || queryType == 'SELECT'){
-      finalQuery = `${variables[0]} FROM ${table} WHERE ${variables[2][0]} ${variables[2][1]} ORDER BY city`;
+       
+
+      finalQuery = (order) ? (`${variables[0]} FROM ${table} WHERE ${variables[2][0]} ${variables[2][1]} ORDER BY city`) : (`${variables[0]} FROM ${table} WHERE ${variables[2][0]} ${variables[2][1]} ORDER BY city asc`);
       return finalQuery;   
     }else{
       console.log("only update and select query can be processed");
       return finalQuery;
     }
 }
-var query = checkQuery `${command} FROM ${table} WHERE ${whereClauses}`;
+var query = checkQuery `${command} FROM ${table} WHERE ${whereClauses} ${order}`;
 console.log(query);

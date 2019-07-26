@@ -18,11 +18,8 @@ let users = [
 ]
 
 const checkDiscount = (user) => {
-    if(user.newuser){
-        return 4;
-    }else{
-        return 5;
-    }
+   
+   return (user.newuser)?(4):(5);
 }
 
 console.log(`The discount for ${users[0].name} is ${checkDiscount(users[0])} %`);
